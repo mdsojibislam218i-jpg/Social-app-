@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Professional Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  background:#f0f2f5;
+  font-family:Arial,sans-serif;
+}
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 1px 4px #0001;
+}
+.item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 5px;
+  border-bottom:1px solid #eee;
+}
+.item:last-child{border-bottom:0}
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e7f3ff;
+  color:#1877f2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="bg-white sticky top-0 z-10 shadow-sm">
+  <div class="max-w-2xl mx-auto px-4 py-4 flex items-center gap-3">
+    <button onclick="history.back()" class="text-xl">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div>
+      <h1 class="font-bold text-lg">Professional Dashboard</h1>
+      <p class="text-xs text-gray-500">আপনার প্রফেশনাল টুলস ও ইনসাইট</p>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-2xl mx-auto p-4 space-y-4">
+
+<!-- Overview -->
+<div class="card">
+  <h2 class="font-bold text-lg mb-3">
+    <i class="fa-solid fa-chart-line text-blue-600"></i>
+    ওভারভিউ
+  </h2>
+
+  <div class="grid grid-cols-2 gap-3">
+
+    <div class="bg-blue-50 rounded-xl p-4">
+      <p class="text-sm text-gray-600">প্রোফাইল ভিউ</p>
+      <h3 class="text-2xl font-bold mt-1" id="views">0</h3>
+    </div>
+
+    <div class="bg-green-50 rounded-xl p-4">
+      <p class="text-sm text-gray-600">পোস্ট রিচ</p>
+      <h3 class="text-2xl font-bold mt-1" id="reach">0</h3>
+    </div>
+
+    <div class="bg-purple-50 rounded-xl p-4">
+      <p class="text-sm text-gray-600">লাইক/রিঅ্যাকশন</p>
+      <h3 class="text-2xl font-bold mt-1" id="likes">0</h3>
+    </div>
+
+    <div class="bg-orange-50 rounded-xl p-4">
+      <p class="text-sm text-gray-600">শেয়ার</p>
+      <h3 class="text-2xl font-bold mt-1" id="shares">0</h3>
+    </div>
+
+  </div>
+</div>
+
+<!-- Professional Tools -->
+<div class="card">
+  <h2 class="font-bold text-lg mb-2">Professional Tools</h2>
+
+  <div class="item" onclick="showMsg('Content Management')">
+    <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+    <div class="flex-1">
+      <b>Content Management</b>
+      <p class="text-xs text-gray-500">আপনার পোস্ট ও কনটেন্ট পরিচালনা করুন</p>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="item" onclick="showMsg('Analytics')">
+    <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
+    <div class="flex-1">
+      <b>Analytics & Insights</b>
+      <p class="text-xs text-gray-500">আপনার পারফরম্যান্স দেখুন</p>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="item" onclick="showMsg('Audience')">
+    <div class="icon"><i class="fa-solid fa-users"></i></div>
+    <div class="flex-1">
+      <b>Audience</b>
+      <p class="text-xs text-gray-500">ফলোয়ার ও অডিয়েন্স সম্পর্কে জানুন</p>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="item" onclick="showMsg('Monetization')">
+    <div class="icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+    <div class="flex-1">
+      <b>Monetization</b>
+      <p class="text-xs text-gray-500">আয়ের যোগ্যতা ও মনিটাইজেশন</p>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="item" onclick="showMsg('Verification')">
+    <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="flex-1">
+      <b>Verification</b>
+      <p class="text-xs text-gray-500">ভেরিফিকেশন আবেদন ও স্ট্যাটাস</p>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+</div>
+
+<!-- Growth -->
+<div class="card">
+  <h2 class="font-bold text-lg mb-3">
+    <i class="fa-solid fa-arrow-trend-up text-green-600"></i>
+    Growth
+  </h2>
+
+  <div class="flex justify-between mb-2">
+    <span class="text-sm">Profile Growth</span>
+    <b>72%</b>
+  </div>
+
+  <div class="w-full bg-gray-200 rounded-full h-2">
+    <div class="bg-blue-600 h-2 rounded-full" style="width:72%"></div>
+  </div>
+
+  <p class="text-xs text-gray-500 mt-3">
+    নিয়মিত কনটেন্ট পোস্ট করলে আপনার প্রোফাইল আরও বেশি মানুষের কাছে পৌঁছাতে পারে।
+  </p>
+</div>
+
+<!-- Settings -->
+<div class="card">
+  <h2 class="font-bold text-lg mb-2">Dashboard Settings</h2>
+
+  <div class="item" onclick="showMsg('Settings')">
+    <div class="icon">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+
+    <div class="flex-1">
+      <b>Professional Settings</b>
+      <p class="text-xs text-gray-500">
+        ড্যাশবোর্ডের সেটিং পরিবর্তন করুন
+      </p>
+    </div>
+
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+// Demo statistics
+let dashboardData = {
+  views: 1250,
+  reach: 3840,
+  likes: 920,
+  shares: 146
+};
+
+document.getElementById("views").innerText =
+dashboardData.views.toLocaleString();
+
+document.getElementById("reach").innerText =
+dashboardData.reach.toLocaleString();
+
+document.getElementById("likes").innerText =
+dashboardData.likes.toLocaleString();
+
+document.getElementById("shares").innerText =
+dashboardData.shares.toLocaleString();
+
+function showMsg(name){
+  alert(name + " বিভাগটি ওপেন হয়েছে।");
+}
+
+</script>
+
+</body>
+</html>
